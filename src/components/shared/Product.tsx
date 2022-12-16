@@ -9,7 +9,7 @@ interface Props {
 }
 export const Product= (props: Props) => {
     return <div className="products-section" id="products-section">
-    <div id="delete-item" className="products-section-item">
+    <div className="products-section-item">
       <div className="products-section-item__thumb">
         <img src="./src/assets/images/1.png" alt="Item Thumbnail" />
       </div>
