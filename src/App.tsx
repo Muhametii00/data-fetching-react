@@ -1,11 +1,14 @@
-import { Button } from "./components/shared/Button"
-
+import { Button } from "./components/Button";
+import { Product } from "./components/shared/Product";
 function App() {
   
   return (
     <div className="App">
-      <Button name="Previous" />
-      <Button name="Next" />
+      <Button addNew="Add New" />
+      <Product thumbnail="" 
+      title="Lorem ipsum Lorem ipsum" 
+      description="Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" 
+      price={12.00}/>
     </div>
   )
 }
