@@ -1,16 +1,11 @@
-import { Button } from "./components/Button";
-import { Product } from "./components/shared/Product";
+import { Home } from "./components/Home";
+
 function App() {
-  
   return (
     <div className="App">
-      <Button addNew="Add New" />
-      <Product thumbnail="" 
-      title="Lorem ipsum Lorem ipsum" 
-      description="Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum" 
-      price={12.00}/>
+      <Home />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
