@@ -107,6 +107,12 @@ body {
   text-align: center;
 }
 
+.products-section-item__remove {
+  background: grey;
+  padding: 10px;
+  cursor: pointer;
+}
+
 .products-section-item__headings {
   flex: 1 1;
 }

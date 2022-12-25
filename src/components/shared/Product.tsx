@@ -2,8 +2,9 @@ import { Product as ProductType } from "../../Products";
 
 interface Props {
   product: ProductType;
+  onRemove: (id: number) => void;
 }
-export const Product = ({ product }: Props) => {
+export const Product = ({ product, onRemove }: Props) => {
   return (
     <div className="products-section" id="products-section">
       <div className="products-section-item">
@@ -20,6 +21,13 @@ export const Product = ({ product }: Props) => {
           </div>
 
           <span className="products-section-item__price">{product.price}€</span>
+
+          <div
+            className="products-section-item__remove"
+            onClick={() => onRemove(product.id)}
+          >
+            <img src="./src/assets/icons/exit.svg" />
+          </div>
         </div>
       </div>
     </div>
