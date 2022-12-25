@@ -26,9 +26,19 @@ export const Home = () => {
   };
 
   const handleAdd = (title: string, description: string, price: number) => {
-    setProductsList(() => {
-      return;
+    setProductsList((previousList) => {
+      return [
+        {
+          id: Math.random(),
+          title: title,
+          description: description,
+          price: price,
+          thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+        },
+        ...previousList,
+      ];
     });
+    setState(false);
   };
 
   return (

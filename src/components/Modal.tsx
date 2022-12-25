@@ -10,11 +10,9 @@ interface Props {
 
 export const Modal = (props: Props) => {
   const [formSubmit, setFormSubmit] = useState({
-    id: Math.random(),
     title: "",
     description: "",
     price: "",
-    thumbnail: "https://i.dummyjson.com/data/products/1/thumbnail.jpg",
   });
 
   const handleSubmitChange = (
@@ -29,7 +27,7 @@ export const Modal = (props: Props) => {
       };
     });
   };
-  const handleOnAdd = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleOnAdd = (event: React.MouseEvent) => {
     event.preventDefault();
 
     props.onAdd(formSubmit.title, formSubmit.description, +formSubmit.price);
@@ -48,11 +46,7 @@ export const Modal = (props: Props) => {
         >
           <img src="./src/assets/icons/exit.svg" />
         </span>
-        <form
-          className="add_modal__form"
-          id="add-form"
-          onSubmit={handleSubmitChange}
-        >
+        <form className="add_modal__form" id="add-form">
           <h5>{props.addNew}</h5>
 
           <input
@@ -60,23 +54,25 @@ export const Modal = (props: Props) => {
             name="title"
             placeholder="Title"
             value={formSubmit.title}
-            onChange={handleOnAdd}
+            onChange={handleSubmitChange}
           />
           <input
             type="text"
             name="price"
             placeholder="Price"
             value={formSubmit.price}
-            onChange={handleOnAdd}
+            onChange={handleSubmitChange}
           />
           <textarea
             name="description"
             id="description"
             placeholder="Description"
             value={formSubmit.description}
-            onChange={handleOnAdd}
+            onChange={handleSubmitChange}
           ></textarea>
-          <button type="submit">{props.add}</button>
+          <button type="submit" onClick={handleOnAdd}>
+            {props.add}
+          </button>
         </form>
       </div>
     </div>
