@@ -108,7 +108,7 @@ body {
 }
 
 .products-section-item__remove {
-  background: grey;
+  background: #30efa6;
   padding: 10px;
   cursor: pointer;
 }

@@ -13,13 +13,13 @@ export const Home = () => {
 
   const executeScrollTop = () => {
     if (elementRef2.current) {
-      elementRef2.current.scrollIntoView();
+      elementRef2.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   const executeScrollBottom = () => {
     if (elementRef1.current) {
-      elementRef1.current.scrollIntoView();
+      elementRef1.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
