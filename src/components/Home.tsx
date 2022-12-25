@@ -3,13 +3,23 @@ import { Products } from "../Products";
 import { Button } from "./Button";
 import { Modal } from "./Modal";
 import { Product } from "./shared/Product";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
+import { faAngleUp } from "@fortawesome/free-solid-svg-icons";
 
 export const Home = () => {
-  const elementRef = useRef<HTMLDivElement | null>(null);
+  const elementRef1 = useRef<HTMLButtonElement | null>(null);
+  const elementRef2 = useRef<HTMLButtonElement | null>(null);
 
-  const executeScroll = () => {
-    if (elementRef.current) {
-      elementRef.current.scrollIntoView();
+  const executeScrollTop = () => {
+    if (elementRef2.current) {
+      elementRef2.current.scrollIntoView();
+    }
+  };
+
+  const executeScrollBottom = () => {
+    if (elementRef1.current) {
+      elementRef1.current.scrollIntoView();
     }
   };
 
@@ -43,7 +53,13 @@ export const Home = () => {
 
   return (
     <>
-      <button onClick={executeScroll}>Scroll to bottom</button>
+      <button
+        ref={elementRef2}
+        className="scroll-view"
+        onClick={executeScrollBottom}
+      >
+        <FontAwesomeIcon icon={faAngleDown} />
+      </button>
       <Button onOpen={handleOpen} />
       <section className="products-sectiom" id="products-section">
         {productsList.map((products) => (
@@ -56,7 +72,13 @@ export const Home = () => {
       </section>
       <Button onOpen={handleOpen} />
 
-      <div ref={elementRef}>Bottom element</div>
+      <button
+        ref={elementRef1}
+        className="scroll-view"
+        onClick={executeScrollTop}
+      >
+        <FontAwesomeIcon icon={faAngleUp} />
+      </button>
       <Modal
         isOpen={state}
         onClose={handleClose}
